@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格结构标签(显示或展示数据)</title>
+</head>
+
+<body>
+
+    <div>
+        合并单元格方式: 1.跨行合并 rowspan 2.跨列合并 colspan 目标单元格: 合并单元格代码要写到目标单元格上 跨行写在上面 跨行写在左面
+    </div>
+
+    <h3>表格</h3>
+    <table border="1" align="center" cellspacing="0" cellpadding="2" width="600px" height="100px">
+        <thead>
+            <!-- 表头单元格 -->
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>工作单位</th>
+            <th>工作年限</th>
+            <th>职位</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">陈方超</td>
+                <td colspan="2">22</td>
+                <td>男</td>
+                <td>海南省公安厅</td>
+                <td>3年</td>
+                <td>后端开发工程师</td>
+            </tr>
+            <tr>
+                <!-- <td>陈方超</td> -->
+                <td>22</td>
+                <td>男</td>
+                <td>海南省公安厅</td>
+                <td>3年</td>
+                <td>后端开发工程师</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
+</head>
+
+<body>
+
+</body>
+
+</html>
