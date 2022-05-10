@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css复合选择器-子选择器(只能选择第一层)</title>
+    <style>
+        .nav>a {
+            text-decoration: none;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="#">我是子元素</a>
+        <p>
+            <a href="#">我是次级子元素</a>
+        </p>
+    </div>
+
+</body>
+
+</html>
