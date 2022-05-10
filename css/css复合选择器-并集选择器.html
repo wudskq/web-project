@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css复合选择器-并集选择器(同时选择多组标签统一定义样式,通常用于集体声明)</title>
+    <style>
+        /* 并集选择器 */
+        
+        div,
+        p,
+        .nav li {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>将进酒</div>
+    <p>杯莫停</p>
+    <span>人生得意须尽欢</span>
+    <ul class="nav">
+        <li>莫使金樽空对月</li>
+        <li>莫使金樽空对月</li>
+        <li>莫使金樽空对月</li>
+    </ul>
+</body>
+
+</html>
