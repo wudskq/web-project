@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css复合选择器-后代选择器(可以选择父元素里面的子元素)</title>
+    <style>
+        /* 要求把ol标签中的子元素选择出来字体颜色变为red色 */
+        
+        ol li {
+            color: red;
+        }
+        
+        ol li a {
+            text-decoration: none;
+        }
+        /* 要求把ul标签中的子元素选择出来字体颜色变为pink色 */
+        
+        ul li {
+            color: pink;
+        }
+        
+        .one li {
+            color: black;
+        }
+        
+        .one li a {
+            color: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>我是ol的子元素</li>
+        <li>我是ol的子元素</li>
+        <li>我是ol的子元素</li>
+        <li>
+            <a href="">我是li的子元素</a>
+        </li>
+    </ol>
+    <ul>
+        <li>我是ul的子元素</li>
+        <li>我是ul的子元素</li>
+        <li>我是ul的子元素</li>
+    </ul>
+    <ol class="one">
+        <li>我是ol的子元素</li>
+        <li>我是ol的子元素</li>
+        <li>我是ol的子元素</li>
+        <li>
+            <a href="">我是li的子元素</a>
+        </li>
+    </ol>
+</body>
+
+</html>
