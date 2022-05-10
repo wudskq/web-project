@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案例三复合选择器</title>
+    <style>
+        /* 后代选择器 */
+        
+        .nav li a {
+            text-decoration: none;
+            color: red;
+        }
+        /* 子选择器 */
+        
+        .hot>a {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 将下面链接文字取消下划线 -->
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#">百度</a>
+            </li>
+            <li>
+                <a href="#">谷歌</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hot">
+        <a href="#">文字一</a>
+        <ul>
+            <li>
+                <a href="">文字二</a>
+            </li>
+            <li>
+                <a href="">文字三</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>
