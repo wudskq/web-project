@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css行高的继承</title>
+    <style>
+        body {
+            color: pink;
+            /* font-size: 12px;
+            line-height: 24px;
+            font-family: 'Courier New', Courier, monospace; */
+            /* font: 12px/24px 'Courier New'; */
+            font: 12px/1.5 'Courier New';
+        }
+        
+        div {
+            /* 行高为当前元素大小的1.5倍 */
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>君不见高堂明镜悲白发，朝如青丝暮成雪。</div>
+    <p>人生得意须尽欢，莫使金樽空对月。</p>
+    <div>天生我材必有用，千金散尽还复来。</div>
+    <ul>
+        <li>我没有指定文字大小</li>
+    </ul>
+</body>
+
+</html>
