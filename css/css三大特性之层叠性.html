@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css三大特性之层叠性</title>
+    <style>
+        div {
+            color: aliceblue;
+        }
+        
+        div {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>相同选择器设置相同样式,此时一个样式就会覆盖另一个冲突的样式,层叠性主要解决样式冲突问题
+        <span>执行原则:就近原则</span>
+    </div>
+
+</body>
+
+</html>
