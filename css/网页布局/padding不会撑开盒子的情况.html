@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding不会撑开盒子的情况</title>
+    <style>
+        h1 {
+            height: 60px;
+            padding: 20px;
+        }
+        
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+        
+        p {
+            height: 60px;
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>没有指定高或者宽</h1>
+    <div>
+        <p>块级元素独显一行的特点,默认是父级元素宽度的100%</p>
+    </div>
+</body>
+
+</html>
