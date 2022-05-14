@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动的两个注意点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .box {
+            width: 100px;
+            height: 300px;
+            background-color: pink;
+        }
+        
+        .nav_1 {
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+        
+        .nav_2 {
+            width: 300px;
+            height: 300px;
+            background-color: antiquewhite;
+            float: left;
+        }
+        
+        .nav_3 {
+            width: 400px;
+            height: 400px;
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 2.2 浮动布局注意点 1. 浮动和标准流的父盒子搭配。 先用标准流的父元素排列上下位置，之后内部子元素采取浮动排列左右位置 2.一个元素浮动了，理论上其余的克弟元素也要浮动。 -->
+    <div class="box">
+        <div class="nav_1">第一个盒子</div>
+        <div class="nav_2">第二个盒子</div>
+        <div class="nav_3">第三个盒子</div>
+    </div>
+</body>
+
+</html>
