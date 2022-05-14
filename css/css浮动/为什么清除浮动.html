@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>为什么清除浮动</title>
+    <style>
+        .box {
+            width: 600px;
+            background-color: pink;
+            margin: 0 auto;
+            border: 5px solid pink;
+        }
+        
+        .nav_1 {
+            float: left;
+            height: 300px;
+            width: 300px;
+            background-color: orange;
+        }
+        
+        .nav_2 {
+            float: left;
+            height: 300px;
+            width: 300px;
+            background-color: rebeccapurple;
+        }
+        
+        .footer {
+            height: 200px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 我们前面浮动元素有一个标准流的父元素，他们有一个共同的特点,都是有高度的．
+但是，所有的父盒子都必须有高度吗？ -->
+    <div class="box">
+        <div class="nav_1">
+        </div>
+        <div class="nav_2">
+        </div>
+        <div class="footer"></div>
+    </div>
+
+</body>
+
+</html>
