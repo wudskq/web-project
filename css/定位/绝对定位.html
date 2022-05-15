@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+        }
+        
+        .box2 {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+        
+        .box3 {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1.5 绝对定位 absolute（重要）
+绝对定位是元素在移动位置的时候，是相对于它祖先元素来说的（拼爹型）。
+语法：
+选择器 position: absolute;}
+绝对定位的特点：（务必记住）
+1. 如果没有祖先元素或者祖先元素没有定位，则以浏览器为准定位(Document文档）。 -->
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+</body>
+
+</html>
