@@ -11,6 +11,10 @@
     margin: auto;
 }
 
+body {
+    background-color: #f3f5f7;
+}
+
 li {
     list-style: none;
 }
@@ -85,11 +89,11 @@ li {
     background-image: url(../../images/xczx/banner2_20190819_210028.png);
 }
 
-.box {
+.banner .box {
     height: 420px;
 }
 
-.box .left_nav {
+.banner .box .left_nav {
     float: left;
     width: 200px;
     height: 420px;
@@ -97,23 +101,23 @@ li {
     margin-right: 500px;
 }
 
-.box .left_nav .list li {
+.banner .box .left_nav .list li {
     padding: 0 20px;
     height: 42px;
     line-height: 42px;
 }
 
-.box .left_nav .list a {
+.banner .box .left_nav .list a {
     color: white;
     font-size: 17px;
     text-decoration: none;
 }
 
-.box .left_nav .list span {
+.banner .box .left_nav .list span {
     float: right;
 }
 
-.box .right_nav {
+.banner .box .right_nav {
     float: right;
     margin-top: 60px;
     margin-bottom: 40px;
@@ -122,7 +126,7 @@ li {
     background-color: white;
 }
 
-.box .right_nav h4 {
+.banner .box .right_nav h4 {
     background-color: skyblue;
     height: 50px;
     line-height: 50px;
@@ -131,11 +135,11 @@ li {
     text-align: center;
 }
 
-.box .right_nav ul {
+.banner .box .right_nav ul {
     background-color: white;
 }
 
-.box .right_nav ul li {
+.banner .box .right_nav ul li {
     text-align: left;
     padding-top: 10px;
     padding-left: 36px;
@@ -143,14 +147,14 @@ li {
     border-bottom: 1px solid #7f939066;
 }
 
-.box .right_nav ul span {
+.banner .box .right_nav ul span {
     display: block;
     text-align: left;
     font-size: 13px;
     font-weight: 400;
 }
 
-.box .right_nav .course {
+.banner .box .right_nav .course {
     width: 200px;
     height: 40px;
     line-height: 40px;
@@ -212,4 +216,109 @@ li {
 
 .goods .list li a {
     color: orange;
+}
+
+.content {
+    height: 600px;
+    background-color: white;
+}
+
+.content .bann {
+    height: 50px;
+}
+
+.content .bann .left {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.content .bann .right {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+
+/* 清除浮动 */
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.nr .data_info li {
+    float: left;
+    width: 200px;
+    margin-right: 40px;
+}
+
+.nr .data_info .number {
+    color: rgb(116, 116, 116);
+    margin: 0 25px 5px 50px;
+    font-size: 12px;
+    font-weight: 400px;
+}
+
+.footer {
+    height: 300px;
+    background-color: white;
+}
+
+.footer .left {
+    float: left;
+}
+
+.footer .left img {
+    margin-top: 60px;
+    margin-left: 130px;
+}
+
+.footer .left div {
+    margin-top: 20px;
+    width: 460px;
+    margin-left: 130px;
+    font-size: 13px;
+}
+
+.footer .left a {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin-left: 130px;
+    margin-top: 20px;
+    border: 2px solid skyblue;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    color: skyblue;
+}
+
+.footer .right .no_1,
+.footer .right .no_2,
+.footer .right .no_3 {
+    float: left;
+    margin-top: 50px;
+    margin-left: 170px;
+}
+
+.footer .right .no_1 li,
+.footer .right .no_2 li,
+.footer .right .no_3 li {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 400;
 }
