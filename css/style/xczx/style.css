@@ -2,3 +2,214 @@
     margin: 0;
     padding: 0;
 }
+
+
+/* 版心 */
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    margin-top: 17px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.header img {
+    padding-top: 15px;
+    padding-left: 20px;
+    float: left;
+}
+
+.header .usr img {
+    padding-top: 20px;
+    padding-left: 80px;
+}
+
+.header .usr span {
+    padding-top: 60px;
+    padding-left: 6px;
+}
+
+.header .nav {
+    float: left;
+    width: 400px;
+    margin-left: 70px;
+}
+
+.header .nav li {
+    width: 100px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.header .nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    text-align: center;
+}
+
+.header .nav a:hover {
+    color: cornflowerblue;
+    border-bottom: 3px solid cornflowerblue;
+}
+
+.header .serach input {
+    float: left;
+    width: 260px;
+    height: 37px;
+    margin-top: 15px;
+    border-top: 2px solid skyblue;
+    border-left: 2px solid skyblue;
+    border-right: 0;
+    border-bottom: 2px solid skyblue;
+    text-align: center;
+    font-size: 15px;
+}
+
+.header .serach .btn {
+    padding-left: 0;
+}
+
+.banner {
+    height: 420px;
+    background-image: url(../../images/xczx/banner2_20190819_210028.png);
+}
+
+.box {
+    height: 420px;
+}
+
+.box .left_nav {
+    float: left;
+    width: 200px;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.3);
+    margin-right: 500px;
+}
+
+.box .left_nav .list li {
+    padding: 0 20px;
+    height: 42px;
+    line-height: 42px;
+}
+
+.box .left_nav .list a {
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.box .left_nav .list span {
+    float: right;
+}
+
+.box .right_nav {
+    float: right;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    height: 280px;
+    width: 260px;
+    background-color: white;
+}
+
+.box .right_nav h4 {
+    background-color: skyblue;
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+}
+
+.box .right_nav ul {
+    background-color: white;
+}
+
+.box .right_nav ul li {
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 36px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #7f939066;
+}
+
+.box .right_nav ul span {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.box .right_nav .course {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: skyblue;
+    border: 2px solid skyblue;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.goods {
+    height: 70px;
+    background-color: white;
+    border: 3px solid whitesmoke;
+}
+
+.goods a {
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.goods .left a:hover,
+.goods .right a:hover {
+    color: skyblue;
+}
+
+.goods .left {
+    float: left;
+    height: 60px;
+    width: 100px;
+    line-height: 60px;
+    margin-left: 10px;
+    color: orange;
+}
+
+.goods .right {
+    float: right;
+    height: 60px;
+    width: 100px;
+    line-height: 60px;
+    margin-right: 10px;
+    color: orange;
+}
+
+.goods .list {
+    float: left;
+    margin-left: 10px;
+    margin-right: 200px;
+}
+
+.goods .list li {
+    font-size: 18px;
+    display: inline-block;
+}
+
+.goods .list li a {
+    color: orange;
+}
