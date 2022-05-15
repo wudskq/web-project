@@ -260,9 +260,15 @@ li {
 }
 
 .nr .data_info li {
+    position: relative;
     float: left;
     width: 200px;
     margin-right: 40px;
+}
+
+.nr .data_info li em {
+    position: absolute;
+    left: 195px;
 }
 
 .nr .data_info .number {
