@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域链</title>
+    <script>
+        //作用城链：内部函数访问外部函数的变量，采取的足链式查找的有式来决定取那个值 这种结构我们称為作
+        //用域链
+        var num = 10;
+
+        function fn1() {
+            var num = 20;
+            fn2();
+
+            function fn2() {
+                console.log(num);
+            }
+        }
+        fn1();
+    </script>
+</head>
+
+<body>
+    只要是代码，就至少有一个作用域 写在函数内部的局部作用域 如果函数中还有西数，那么在这个作用域中就又可以诞生一个作用域 根据在内部函数可以访问外部区数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就称 作作用域链
+</body>
+
+</html>
