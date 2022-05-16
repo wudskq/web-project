@@ -9,9 +9,23 @@
     <script>
         const data = getSum(1, 2);
         console.log(data);
+        var list = operter(4, 3);
+        list.forEach(function(i) {
+            console.log(i);
+        });
         //
         function getSum(num1, num2) {
             return num1 + num2;
+        }
+
+        function operter(num1, num2) {
+            var list = new Array();
+            list[0] = num1 + num2;
+            list[1] = num1 - num2;
+            list[2] = num1 * num2;
+            list[3] = num1 / num2;
+            list[4] = num1 % num2;
+            return list;
         }
     </script>
 </head>
