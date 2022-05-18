@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用new Object()创建对象</title>
+    <script>
+        //空对象
+        var obj = new Object();
+        obj.id = 1;
+        obj.age = 18;
+        obj.name = 'admin';
+        obj.address = '陕西省西安市';
+        obj.sayHi = function() {
+            console.log('我叫 ' + obj.name + '今年' + obj.age + '岁');
+        };
+        console.log(obj.name);
+        obj.sayHi();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
