@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用构造函数创建对象</title>
+    <script>
+        function User(id, name, age, address) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            this.sayHi = function() {
+                console.log('我叫 ' + obj.name + '今年' + obj.age + '岁');
+            }
+        }
+        var obj = new User(1, '张三', 18, '中国');
+        console.log(obj.name);
+        obj.sayHi();
+    </script>
+</head>
+
+<body>
+    1.//我们为什么需要使用构造函数 /！就是因我们前面两种创建对象的方式一次只能创建一个对象
+    <br>构造函数：是一种特殊的函数，主要用来初始化对象，即为对象成员变量城初始值，它总与new 运算符一起 使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面。
+</body>
+
+</html>
