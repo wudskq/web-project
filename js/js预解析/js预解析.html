@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js预解析说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        // 1.
+        // console.log(num);
+        // 2.
+        console.log(num1);
+        var num1 = 18;
+        // 3.
+        fn1();
+
+        function fn1() {
+            console.log(1);
+        }
+
+        fn2();
+        //4.
+        var fn2 = function() {
+            console.log(2);
+        }
+    </script>
+</head>
+
+<body>
+    js引擎执行js代码分为两步, 1.先预解析js代码 2.在执行js代码
+    <br> 1. js预解析: 指在执行js代码之前,先把js中的var,function变量或函数的提升到当前作用域的最前面
+    <br> 2. 代码执行: 按照代码书写的顺序 从上往下执行
+</body>
+
+</html>
