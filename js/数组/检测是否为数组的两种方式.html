@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测是否为数组的两种方式</title>
+    <script>
+        var list = [1, 2, 3, 4, 9, 6, 7, 8];
+        var obj = {
+            forList: function() {
+                var array = arguments[0];
+                var temp = 0;
+                //判断是否为数组
+                // if (array instanceof Array) {
+                //     for (let index = 0; index < array.length; index++) {
+                //         const element = array[index];
+                //         if (temp < element) {
+                //             temp = element;
+                //         }
+                //     }
+                //     return temp;
+                // }
+                if (Array.isArray(array)) {
+                    for (let index = 0; index < array.length; index++) {
+                        const element = array[index];
+                        if (temp < element) {
+                            temp = element;
+                        }
+                    }
+                    return temp;
+                }
+            }
+        }
+        var data = obj.forList(list);
+        console.log(data);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
