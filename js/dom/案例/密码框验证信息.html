@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码框验证信息</title>
+    <style>
+        .box {
+            margin-top: 100px;
+            margin-left: 600px;
+        }
+        
+        p {
+            display: inline-block;
+            background: url(../../images/mess.png) no-repeat left center;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        
+        #message_change {
+            display: inline-block;
+            background: url(../../images/wrong.png) no-repeat left center;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        设置密码: <input type="text" id='in_1'>
+        <p id="message">请输入6～16为位密码</p>
+    </div>
+</body>
+
+<script>
+    var input = document.getElementById('in_1');
+    var message = document.getElementById('message');
+    input.onblur = function() {
+        var value = input.value;
+        if (value.length > 16 || value.length < 6) {
+            // console.log(value.length);
+            message.id = 'message_change';
+            message.innerText = '您输入的位数不对要求6~16位';
+        } else {
+            message.id = '';
+            message.innerText = '输入正确';
+        }
+    }
+</script>
+
+</html>
