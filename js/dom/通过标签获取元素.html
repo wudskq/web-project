@@ -16,7 +16,7 @@
         <li>这是测试数据</li>
         <li>这是测试数据</li>
     </ul>
-    <ol>
+    <ol id="ol_1">
         <li>这是ol数据</li>
         <li>这是ol数据</li>
         <li>这是ol数据</li>
@@ -36,6 +36,10 @@
     console.log(ol);
     var lis = ol[0].getElementsByTagName('li');
     console.log(lis);
+    //
+    var lis1 = document.getElementById('ol_1');
+    console.log(lis1);
+    console.log(lis1.getElementsByTagName('li'));
 </script>
 
 </html>
