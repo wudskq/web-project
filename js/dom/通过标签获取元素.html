@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过标签获取元素</title>
+</head>
+
+<body>
+    <ul>
+        <li>这是测试数据</li>
+        <li>这是测试数据</li>
+        <li>这是测试数据</li>
+        <li>这是测试数据</li>
+        <li>这是测试数据</li>
+    </ul>
+</body>
+
+<script>
+    //得到的数据是list 需要通过遍历的方式操作元素
+    var obj = document.getElementsByTagName('li');
+    console.log(obj);
+    console.log(typeof obj);
+    console.dir(obj)
+</script>
+
+</html>
