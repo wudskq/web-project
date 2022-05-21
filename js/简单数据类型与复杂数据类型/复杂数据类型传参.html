@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复杂数据类型传参</title>
+    <script>
+        function person(name) {
+            this.name = name;
+        }
+
+        function fn1(x) {
+            x.name = '李四';
+        }
+        var obj1 = new person('张三');
+
+        console.log(obj1.name);
+        fn1(obj1);
+        console.log(obj1.name);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
