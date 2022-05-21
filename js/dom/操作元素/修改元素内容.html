@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改元素内容</title>
+    <style>
+        div,
+        p {
+            margin: 50px auto;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            background-color: pink;
+            text-align: center;
+        }
+        
+        #btn_1 {
+            margin-top: 80px;
+            margin-left: 620px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn_1">显示当前系统时间</button>
+    <div id="id_1">某个时间</div>
+    <p>某个时间</p>
+</body>
+<script>
+    var btn = document.getElementById('btn_1')
+    var data = document.getElementById('id_1');
+    var time = new Date();
+    btn.onclick = function() {
+            data.innerHTML = time.toLocaleDateString();
+        }
+        //不用添加事件也可以
+    var p = document.querySelector('p');
+    p.innerText = time.toLocaleDateString();
+</script>
+
+</html>
