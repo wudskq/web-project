@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改样式属性</title>
+    <style>
+        div {
+            margin: 20px auto;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        button {
+            margin-left: 650px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击按钮变换颜色</button>
+    <div></div>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    btn.onclick = function() {
+        div.style.backgroundColor = 'rgb(211 61 61)';
+    }
+</script>
+
+</html>
