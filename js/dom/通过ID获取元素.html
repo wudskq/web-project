@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过ID获取元素</title>
+</head>
+
+<body>
+    <div id="text_1">
+        此处为测试内容
+    </div>
+</body>
+
+<!-- 因为我们文档从上往下加载,所有必须放在元素后面 -->
+<script>
+    var element = document.getElementById('text_1');
+    console.log(element);
+    //
+    console.log(typeof element);
+    //
+    console.dir(element);
+</script>
+
+</html>
