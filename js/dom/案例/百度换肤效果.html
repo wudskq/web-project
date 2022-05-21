@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度换肤效果</title>
+    <style>
+        .box {
+            margin: 10px 0px 0px 330px;
+        }
+        
+        .box img {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../../images/1.jpg" alt="">
+        <img src="../../images/2.jpg" alt="">
+        <img src="../../images/3.jpg" alt="">
+        <img src="../../images/4.jpg" alt="">
+    </div>
+</body>
+<script>
+    var imgs = document.getElementsByTagName('img');
+    for (let index = 0; index < imgs.length; index++) {
+        var img = imgs[index];
+        img.onclick = function() {
+            var data = this.src;
+            console.log(data);
+            document.body.style.backgroundImage = 'url(' + this.src + ')';;
+        }
+    }
+</script>
+
+</html>
