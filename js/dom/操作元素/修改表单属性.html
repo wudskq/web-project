@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改表单属性</title>
+    <style>
+        div {
+            margin: 0 auto;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button>点击我,更换表单元素</button>
+        <input type="text" name="" id="" value="请输入内容">
+    </div>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    var input = document.querySelector('input');
+    console.log(btn);
+    console.log(input);
+    btn.onclick = function() {
+        input.value = '测试数据';
+    }
+</script>
+
+</html>
