@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件三要素</title>
+</head>
+
+<body>
+
+    <button id="btn_1">按钮</button>
+    <p>
+        事件由三部分组成: 1.事件源 2.事件类型 3.事件处理程序 称为事件的三要素 1.事件源 事件触发的对象 2.事件类型: 如何触发 3. 事件处理程: 触发后要做什么事情
+    </p>
+</body>
+
+<script>
+    var btn = document.getElementById('btn_1');
+    btn.onclick = function() {
+        alert('hello world!');
+    }
+</script>
+
+</html>
