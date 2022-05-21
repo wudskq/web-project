@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>执行事件的步骤</title>
+    <style>
+        #btn_1 {
+            margin-top: 10px;
+            width: 200px;
+            height: 30px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="class_1">
+        123
+    </div>
+    <button id="btn_1">我是按钮</button>
+    <p>通过选择器获取事件源</p>
+    <p>给获取的事件源注册事件</p>
+    <p>添加事件处理程序</p>
+</body>
+
+<script>
+    var obj1 = document.getElementsByClassName('class_1');
+    var btn = document.getElementById('btn_1');
+    btn.onclick = function() {
+        console.log(obj1);
+    }
+</script>
+
+</html>
