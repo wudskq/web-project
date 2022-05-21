@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防京东显示密码案例</title>
+    <style>
+        h3 {
+            text-align: center;
+        }
+        
+        .login {
+            margin-left: 560px;
+        }
+        
+        input {
+            width: 200px;
+            height: 20px;
+            border: 1px solid black;
+        }
+        
+        .username input {
+            margin-top: 2px;
+        }
+        
+        .password input {
+            margin-top: 3px;
+            margin-left: 15px;
+        }
+        
+        .password button {
+            border: 1px solid transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>请登录</h3>
+    <div class="login">
+        <div class="username">
+            用户名: <input type="text" value="请输入用户名" id="username">
+        </div>
+        <div class="password">
+            密码: <input type="password" value="请输入密码" id="password"> <button id="select_password">点击显示密码</button>
+        </div>
+    </div>
+</body>
+<script>
+    var btn = document.querySelector('#select_password');
+    var usn = document.querySelector('#username');
+    var pas = document.querySelector('#password');
+    //计数器
+    var flag = 1;
+    //显示密码
+    btn.onclick = function() {
+            ++flag;
+            if (flag % 2 == 0) {
+                pas.type = 'text';
+            } else {
+                pas.type = 'password';
+            }
+
+        }
+        //请输入输入框密码值
+    usn.onclick = function() {
+        usn.value = null;
+    }
+    pas.onclick = function() {
+        pas.value = null;
+    }
+</script>
+
+</html>
