@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5新增获取元素方式</title>
+</head>
+
+<body>
+    <div class="box">
+        元素1
+    </div>
+    <div id="id_1">
+        元素2
+    </div>
+    <div>
+        元素3
+    </div>
+</body>
+<script>
+    var obj1 = document.querySelector('.box');
+    console.log(obj1);
+    var obj2 = document.querySelector('#id_1');
+    console.log(obj2);
+    //根据指定选择器第一个元素对象
+    var obj3 = document.querySelector('div');
+    console.log(obj3);
+</script>
+
+</html>
