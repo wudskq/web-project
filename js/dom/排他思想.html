@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排他思想</title>
+    <style>
+        div {
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+</body>
+<script>
+    var btns = document.getElementsByTagName('button');
+    for (let index = 0; index < btns.length; index++) {
+        var btn = btns[index];
+        btn.onclick = function() {
+            //先把所有元素背景颜色去掉
+            for (let index = 0; index < btns.length; index++) {
+                var element = btns[index];
+                element.style.backgroundColor = 'transparent';
+            }
+            //再使当前元素背景元素为pink
+            this.style.backgroundColor = 'pink';
+        }
+    }
+</script>
+
+</html>
