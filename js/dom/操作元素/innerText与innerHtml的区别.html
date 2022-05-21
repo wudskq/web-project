@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerText与innerHtml的区别</title>
+</head>
+
+<body>
+    innerText不识别html标签,去除空格和换行 innerHTML识别html标签,不去除空格和换行
+    <div class="class_1"></div>
+    <div class="class_2"></div>
+    <p>
+        我是文字
+        <span>123</span>
+    </p>
+</body>
+
+<script>
+    var obj1 = document.querySelector('.class_1');
+    var obj2 = document.querySelector('.class_2')
+        //ie 开发 非标准
+    obj1.innerText = '<strong>今天是</strong> 2022';
+    // w3c 推荐 标准
+    obj2.innerHTML = '<strong>今天是</strong> 2022';
+    //这两个API是可读写的
+    var p = document.querySelector('p');
+    var data1 = p.innerHTML;
+    console.log(data1);
+    var data2 = p.innerText;
+    console.log(data2);
+</script>
+
+</html>
