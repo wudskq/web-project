@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作之第一个元素与最后一个元素</title>
+</head>
+
+<body>
+    <ul>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+    </ul>
+</body>
+<script>
+    var ul = document.getElementsByTagName('ul');
+    var ul_data = ul[0];
+    console.log(ul_data.firstChild);
+    console.log(ul_data.lastChild);
+    console.log(ul_data.firstElementChild);
+    console.log(ul_data.lastElementChild);
+    var li = ul_data.children;
+    console.log(li);
+    console.log(li[0]);
+    console.log(li[li.length - 1]);
+</script>
+
+</html>
