@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新浪下拉菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #ul_1 li {
+            display: inline-block;
+            position: relative;
+            list-style: none;
+            margin-left: 20px;
+            text-align: center;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background-color: skyblue;
+        }
+        
+        .nav {
+            margin: 10px auto;
+            width: 500px;
+            height: 100px;
+        }
+        
+        .meun_data {
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: none;
+        }
+        
+        .change {
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul id='ul_1'>
+            <li>
+                <a href="">导航一</a>
+                <ul class="meun_data">
+                    <li>下拉菜单</li>
+                    <li>下拉菜单</li>
+                    <li>下拉菜单</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">导航二</a>
+                <ul class="meun_data">
+                    <li>下拉菜单</li>
+                    <li>下拉菜单</li>
+                    <li>下拉菜单</li>
+                </ul>
+            </li>
+            <li>
+                <a href="">导航三</a>
+                <ul class="meun_data">
+                    <li>下拉菜单</li>
+                    <li>下拉菜单</li>
+                    <li>下拉菜单</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var ul_data = document.getElementById('ul_1');
+    var lis_1 = ul_data.children;
+    console.log(lis_1);
+    //设置索引
+    for (let index = 0; index < lis_1.length; index++) {
+        var li = lis_1[index];
+        //获取li下面的ul数据并设置索引
+        var a = li.children[0];
+        var data = li.children[1];
+        // console.log(data);
+        data.setAttribute('index', index);
+        data.setAttribute('index', index);
+    }
+    //绑定事件
+    for (let index = 0; index < lis_1.length; index++) {
+        var li = lis_1[index];
+        li.onmouseover = function() {
+            var data = this.children[1];
+            // console.log(index);
+            data.className = 'change';
+        }
+        li.onmouseout = function() {
+            var data = this.children[1];
+            // console.log(index);
+            data.className = 'meun_data';
+        }
+
+    }
+</script>
+
+</html>
