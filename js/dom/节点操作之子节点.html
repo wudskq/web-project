@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作之子节点</title>
+</head>
+
+<body>
+    <ul>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+    </ul>
+    <ol>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+        <li>测试数据</li>
+    </ol>
+</body>
+<script>
+    var ul = document.getElementsByTagName('ul');
+    var data_ul = ul[0];
+    var ul_lis = data_ul.children;
+    console.log(ul_lis);
+    var ol = document.getElementsByTagName('ol');
+    var data_ol = ol[0];
+    var ol_lis = data_ol.children;
+    console.log(ol_lis);
+</script>
+
+</html>
