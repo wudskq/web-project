@@ -9,12 +9,14 @@
 </head>
 
 <body>
-    <div class="clas_1"></div>
+    <div class="clas_1" index='100'></div>
+    4.6 自定义属性的操作 1. 获取属性值 element.属性 获取属性值。 element.getAttribute(属性"）； 区别： element.属性 获取内置属性值（元素本身自带的属性） element.getAttribute(*属性，）；主要获得自定义的属性（标准）我们程序员自定义的属性
 </body>
 <script>
     var div = document.querySelector('div');
     console.log(div.className);
     console.log(div.getAttribute('class'));
+    console.log(div.getAttribute('index'));
 </script>
 
 </html>
