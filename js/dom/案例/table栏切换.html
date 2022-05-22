@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table栏切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .tab {
+            width: 978px;
+            margin: 100px auto;
+        }
+        
+        .tab_list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+        
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .tab_list .current {
+            background-color: #c81623;
+            color: #fff;
+        }
+        
+        .item_info {
+            padding: 20px 0 0 20px;
+        }
+        
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价（50000）</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item" style="display: block;">
+                商品介绍模块内容
+            </div>
+            <div class="item">
+                规格与包装模块内容
+            </div>
+            <div class="item">
+                售后保障模块内容
+            </div>
+            <div class="item">
+                商品评价（50000）模块内容
+            </div>
+            <div class="item">
+                手机社区模块内容
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    var head = document.getElementsByClassName('tab_list');
+    var heads = head[0].getElementsByTagName('li');
+    var items = document.getElementsByClassName('item');
+    console.log(heads);
+    console.log(items);
+    //表格栏注册事件
+    for (let index = 0; index < heads.length; index++) {
+        var element = heads[index];
+        element.onclick = function() {
+            for (let index = 0; index < heads.length; index++) {
+                var element = heads[index];
+                element.className = null;
+                //设置内容自定义属性
+                element.setAttribute('index', index);
+            }
+            //设置内容自定义属性
+            for (let index = 0; index < items.length; index++) {
+                var element = items[index];
+                element.setAttribute('index', index);
+            }
+            this.className = 'current';
+            var idx = this.getAttribute('index');
+            console.log(index);
+            var data = items[index];
+            console.log(data);
+            //设置内容自定义属性
+            for (let index = 0; index < items.length; index++) {
+                var element = items[index];
+                element.style.display = 'none';
+            }
+            data.style.display = 'block';
+        }
+    }
+</script>
+
+</html>
