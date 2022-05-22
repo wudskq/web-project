@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作之父节点</title>
+    <style>
+        .cls_1 {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+        .cls_2 {
+            width: 200px;
+            height: 50px;
+            background-color: aquamarine;
+        }
+        
+        .change {
+            background-color: orange;
+            width: 200px;
+            height: 50px;
+        }
+        
+        .change_1 {
+            width: 300px;
+            height: 200px;
+            background-color: rgb(211, 79, 101);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cls_1">
+        <div class="cls_2">
+            <span>x</span>
+        </div>
+    </div>
+</body>
+<script>
+    var xs = document.getElementsByTagName('span');
+    console.log(xs);
+    var x = xs[0];
+    console.log(x);
+    var cls_2 = x.parentNode;
+    console.log(cls_2);
+    console.log(cls_2.parentNode);
+    //绑定事件
+    x.onclick = function(event) {
+        //阻止冒泡
+        event.cancelBubble = true;
+        cls_2.className = 'change';
+    }
+    cls_2.onclick = function() {
+        cls_2.parentNode.className = 'change_1';
+    }
+</script>
+
+</html>
