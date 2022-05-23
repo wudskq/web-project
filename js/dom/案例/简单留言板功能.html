@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单留言板功能</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 100px;
+            margin-left: 460px;
+        }
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .box #lyb {
+            margin: 0px;
+            width: 545px;
+            height: 115px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <textarea name="" id="lyb" cols="30" rows="10"></textarea>
+        <button id="btn_1">发布</button>
+        <br>
+        <br>
+        <p>留言板:</p>
+        <ul id="data_1">
+        </ul>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('btn_1');
+    var ul = document.getElementById('data_1');
+    var data = document.getElementById('lyb');
+    btn.onclick = function() {
+        var date = new Date();
+        var li = document.createElement('li');
+        li.innerHTML = '发布时间: ' + date.toLocaleDateString() + '&nbsp;' + data.value;
+        ul.insertBefore(li, ul.children[0]);
+    }
+</script>
+
+</html>
