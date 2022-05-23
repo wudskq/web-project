@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作之创建节点和操作节点</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>测试数据</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var ul = document.querySelector('ul');
+    var ele_lo = document.createElement('li');
+    var ele_l1 = document.createElement('li');
+    //之后追加
+    ul.appendChild(ele_lo);
+    //前面添加
+    ul.insertBefore(ele_l1);
+</script>
+
+</html>
