@@ -66,9 +66,13 @@
         }
     }
     btn_2.onclick = function() {
-        var data = ul.children[0];
-        console.log(data.firstChild);
-        ul.insertBefore(data, ul.children[0]);
+        /**
+         * node.cloneNode()；括号为空或者里面是false 浅拷贝 只复制标签不复制里面的内容
+           node..cloneNode(true)；括号为true 深拷贝 复制标签复制里面的内容
+         * */
+        var data = ul.children[0].cloneNode(true);
+        console.log(data);
+        ul.appendChild(data);
     }
 </script>
 
