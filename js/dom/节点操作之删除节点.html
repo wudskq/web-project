@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作之删除节点</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        ul li {
+            list-style: none;
+        }
+        
+        .box {
+            margin: 20px auto;
+            width: 300px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <button>删除按钮</button>
+        <ul>
+            <li>子节点一</li>
+            <li>子节点二</li>
+            <li>子节点三</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var ul = document.querySelector('ul');
+    var button = document.querySelector('button');
+    console.log(ul);
+    // var remove1 = ul.removeChild(ul.children[0]);
+    // console.log(remove1);
+    button.onclick = function() {
+        if (ul.children.length == 0) {
+            this.disabled = true;
+        } else {
+            ul.removeChild(ul.children[0]);
+        }
+    }
+</script>
+
+</html>
