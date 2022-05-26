@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>监听事件</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="counter += 1">点击按钮加一</button>
+        <div>The button above has been clicked {{ counter }} times.</div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: "#app ",
+        data: {
+            counter: 1
+        }
+    });
+</script>
+
+</html>

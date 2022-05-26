@@ -9,8 +9,8 @@ li {
 
 #app {
     margin: 20px auto;
-    width: 300px;
-    background-color: aliceblue;
+    width: auto;
+    background-color: skyblue;
     text-align: center;
     line-height: 100px;
 }
