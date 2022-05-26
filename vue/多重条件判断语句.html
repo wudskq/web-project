@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多重条件判断语句</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <span v-if="type === 'A'">我是A</span>
+        <span v-else-if="type === 'B'">我是B</span>
+        <span v-else-if="type === 'C'">我是C</span>
+        <span v-else="type === 'D'">我是D</span>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: "#app ",
+        data: {
+            type: 'A'
+        }
+    });
+</script>
+
+</html>
