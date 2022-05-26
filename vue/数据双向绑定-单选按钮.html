@@ -5,24 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数据双向绑定-单个复选框</title>
+    <title>数据双向绑定-单选按钮</title>
     <link rel="stylesheet" href="css/index.css">
     <script src="js/vue.js"></script>
 </head>
 
 <body>
     <div id="app">
-        单个复选框绑定到布尔值
-        <input type="checkbox" v-model="checked" value="复选框">单个复选框
-        <br>
-        <span>{{checked}}</span>
+        <input type="radio" id="1" value="one" v-model="picked">
+        <label for="">单选按钮1</label>
+        <input type="radio" id="1" value="two" v-model="picked">
+        <label for="">单选按钮1</label>
+        <span>{{picked}}</span>
     </div>
 </body>
 <script>
     var vm = new Vue({
         el: "#app",
         data: {
-            checked: ''
+            picked: ''
         }
     });
 </script>
