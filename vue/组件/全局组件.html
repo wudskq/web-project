@@ -1,0 +1,17 @@
+<!--view层，模板-->
+<div id="app">
+    <cvzhanshi></cvzhanshi>
+</div>
+<!--1.导入Vue.js-->
+<script src="../js/vue.js"></script>
+<script type="text/javascript">
+    Vue.component("cvzhanshi", {
+        template: '<li>Hello cVzhanshi</li>'
+    });
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            selected: ''
+        }
+    });
+</script>

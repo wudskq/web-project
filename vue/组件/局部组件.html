@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一个组件</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <compont></compont>
+    </div>
+</body>
+<script>
+    //局部组件 定义在Vue对象上的成为局部组件
+    new Vue({
+        el: "#app",
+        data: {
+            selected: ''
+        },
+        components: {
+            compont: {
+                template: '<li>我是局部组件</li>'
+            }
+        }
+    });
+</script>
+
+</html>
