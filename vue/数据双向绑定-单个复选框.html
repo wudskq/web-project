@@ -12,14 +12,16 @@
 
 <body>
     <div id="app">
-        <input type="checkbox" v-model="checked">单个复选框
+        <input type="checkbox" v-model="checked" value="复选框">单个复选框
+        <br>
+        <span>{{checked}}</span>
     </div>
 </body>
 <script>
     var vm = new Vue({
         el: "#app",
         data: {
-            checked: true
+            checked: ''
         }
     });
 </script>
