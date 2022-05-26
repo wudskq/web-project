@@ -1,0 +1,8 @@
+#app {
+    margin: 20px auto;
+    width: 300px;
+    height: 100px;
+    background-color: aliceblue;
+    text-align: center;
+    line-height: 100px;
+}
