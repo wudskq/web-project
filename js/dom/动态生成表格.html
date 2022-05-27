@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生成表格</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        div {
+            margin: 20px auto;
+            margin-left: 500px;
+        }
+        
+        table,
+        table tr th,
+        table tr td {
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        
+        table {
+            width: 400px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table cellpadding="0" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>科目</th>
+                    <th>成绩</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    //准备假数据
+    var datas = [{
+        name: '张三',
+        subject: 'javaScript',
+        score: 100
+    }, {
+        name: '张三',
+        subject: 'javaScript',
+        score: 100
+    }, {
+        name: '张三',
+        subject: 'javaScript',
+        score: 100
+    }, {
+        name: '张三',
+        subject: 'javaScript',
+        score: 100
+    }];
+    var tbody = document.querySelector('tbody');
+    console.log(tbody);
+    for (let index = 0; index < datas.length; index++) {
+        var element = datas[index];
+        //创建行
+        var tr = document.createElement('tr');
+        tbody.appendChild(tr);
+        //遍历对象属性
+        for (var k in datas[index]) {
+            //创建列
+            var td = document.createElement('td');
+            td.innerHTML = datas[index][k];
+            tr.appendChild(td);
+        }
+        //创建删除单元格
+        var td = document.createElement('td');
+        td.innerHTML = '<a href=javaScript:;>删除</a>';
+        tr.appendChild(td);
+    }
+    //原理: 把所有的a链接都注册事件,当点击a时获取到a所在的行直接进行删除
+    var alist = document.querySelectorAll('a');
+    // console.log(alist);
+    for (let index = 0; index < alist.length; index++) {
+        const element = alist[index];
+        element.onclick = function() {
+            var pNode = this.parentNode.parentNode;
+            console.log(pNode);
+            tbody.removeChild(pNode);
+        }
+    }
+</script>
+
+</html>
