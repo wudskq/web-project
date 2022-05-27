@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止默认行为</title>
+</head>
+
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <form action="">
+        <input type="submit">
+        <!-- <label for="提交">提交</label> -->
+    </form>
+</body>
+<script>
+    var a = document.querySelector('a');
+    var sub = document.querySelector('input');
+    a.addEventListener('click', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+</html>
