@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e.target与this的区别</title>
+    <style>
+        div {
+            margin: 20px auto;
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>测试</li>
+        <li>测试</li>
+        <li>测试</li>
+    </ul>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var ul = document.querySelector('ul');
+    //事件对象
+    //1/ 1. event 就是一个事件对象 写到我们侦听西数的 小括号里面 当形参来看
+    //事件对象只有有了事件才会存在，它是系统给我们自动创建的，不需要我们传递参数
+    div.addEventListener('click', function(event) {
+        //返回的触发事件的对象
+        console.log(event.target);
+        //返回的是绑定事件的对象
+        console.log(this);
+    });
+    ul.addEventListener('click', function(e) {
+        console.log(e.target);
+        console.log(this);
+    })
+</script>
+
+</html>
