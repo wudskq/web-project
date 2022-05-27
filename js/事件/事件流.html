@@ -6,11 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事件流</title>
+    <style>
+        div {
+            margin: 20px auto;
+        }
+        
+        .id_1 {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+        }
+        
+        .id_2 {
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
 </head>
 
 <body>
-    <p>享件流描送的是从页面中接收事件的顺序。 事件发生时会在元素节点之问按照特定的顺序传播，这个传圖过程即DOM事件流。 M
-    </p>
+    <!-- <p>享件流描送的是从页面中接收事件的顺序。 事件发生时会在元素节点之问按照特定的顺序传播，这个传圖过程即DOM事件流。 M
+    </p> -->
+    <div class="id_1">
+        <div class="id_2">
+        </div>
+    </div>
 </body>
+<script>
+    var div1 = document.querySelector('.id_1');
+    var div2 = document.querySelector('.id_2');
+    //第三个参数决定事件为捕获事件或者冒泡事件
+    //trur为捕获事件
+    document.addEventListener('click', function() {
+        alert('document');
+    }, true);
+    // div2.addEventListener('click', function() {
+    //     alert('div2')
+    // }, true)
+    // div1.addEventListener('click', function() {
+    //         alert('div1')
+    //     }, true)
+    //冒泡阶段
+    div2.addEventListener('click', function() {
+        alert('div2')
+    }, false)
+    div1.addEventListener('click', function() {
+        alert('div1')
+    }, false)
+</script>
 
 </html>
