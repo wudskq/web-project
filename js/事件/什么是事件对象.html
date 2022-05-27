@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>什么是事件对象</title>
+</head>
+
+<body>
+    <button>按钮</button>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    //事件对象
+    //1/ 1. event 就是一个事件对象 写到我们侦听西数的 小括号里面 当形参来看
+    //事件对象只有有了事件才会存在，它是系统给我们自动创建的，不需要我们传递参数
+    btn.addEventListener('click', function(event) {
+        console.log(event);
+    });
+</script>
+
+</html>
