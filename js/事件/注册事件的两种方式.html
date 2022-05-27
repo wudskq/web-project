@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册事件的两种方式</title>
+</head>
+
+<body>
+    <p>
+        1.1 注册事件概述 给元泰添加事件，称为注册事件或者绑定事件。 注册事件有两种方式：传统方式和方法监听注所方式 传统注册方式 」利用 on 开头的事件 onclick // / 特点：注册事件的唯一性 同一个元素同一个事件只能设置一个处理函数，最 后注册的处理函数将会覆金前面注册的处理函数
+    </p>
+    <p>方法蓝听注册方式 W3c标准 推荐方式 addEventListener0 它是一个方法 IE9 之前的 IE不支持此方法，可使用 attachEvent0代替 特点：同一个元素同一个事件可以注册多个监听器 按注册顺序依次执行 1.2笥¢dEventListener 事件货听方式 event Target . addEventListener (type, 1istener[, useCapture]) eventrarget,addEventListener()方法将指定的监听器注册到eventrarget（日标对象）上，当
+        象触发指定的事件时，就会执行事件处理函数。 该方法接收三个参数： type：事件类型字符串，比如 click、 mouseover，注意这里不要带 on listener：事件处理國数，事件发生时，会调用该监听函数 useCapture：可选参数，是一个布尔值，默认是false。学完DOM 事件流后，我们再进一步学习
+    </p>
+    <button>传统方式注册事件</button>
+    <button>监听方式注册事件</button>
+</body>
+<script>
+    var btns = document.querySelectorAll('button');
+    //传统方式
+    btns[0].onclick = function() {
+        alert('hi');
+    }
+    btns[0].onclick = function() {
+            alert('hello');
+        }
+        //监听方式
+    btns[1].addEventListener('click', function() {
+        alert('hi')
+    })
+    btns[1].addEventListener('click', function() {
+        alert('hello')
+    })
+</script>
+
+</html>
