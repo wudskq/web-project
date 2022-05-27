@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=p, initial-scale=1.0">
+    <title>js同步与异步</title>
+</head>
+
+<body>
+    <p>JavaScript语言的一火特点就是单线程，也就是说，同一个时间只能做一件事。这是因为 Javascript这门脚 本语言诞生的使命所致——JavaScript 是为处理页面中用户的交互，以及操作DOM而诞生的。比如我们对 某个DOM 元素进行添加和删除操作，不能同时进行。应该先进行添加，之后再删除。 单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。这样所导致的问题是：如果 JS执行的时间过长，这样就会造成页面的渲染不连贯，导致页面渲染加载阻塞的感觉。
+    </p>
+</body>
+<script>
+    console.log(1);
+    setTimeout(() => {
+        console.log(2);
+    }, 2000);
+    console.log(3);
+</script>
+
+</html>
