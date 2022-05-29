@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         <h2 :style="{opacity}">欢迎学习Vue</h2>
+        <button @click="stop">点我停止变化</button>
     </div>
 </body>
 <script>
@@ -23,17 +24,23 @@
             }
         },
         methods: {
-
+            stop() {
+                console.log('执行函数');
+                this.$destroy();
+            }
         },
         //钩子函数
         mounted() {
-            console.log('定时器');
-            setInterval(() => {
+            this.timer = setInterval(() => {
+                console.log('定时器');
                 vm.opacity -= 0.01;
                 if (vm.opacity <= 0) {
                     vm.opacity = 1
                 }
             }, 16)
+        },
+        beforeDestroy() {
+            clearInterval(this.timer);
         },
     });
     //通过外部定时器实现不推荐
