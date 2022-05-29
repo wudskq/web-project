@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件的嵌套</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <school>
+        </school>
+        <hr>
+    </div>
+</body>
+<script>
+    //创建student组件
+    const student = Vue.extend({
+        template: `
+        <div>
+        <h3>学生名称:{{studentName}}</h3>
+        <h3>学生地址:{{studentAddress}}</h3>
+        </div>
+        `,
+        data() {
+            return {
+                studentName: '名称',
+                studentAddress: '地址'
+            }
+        }
+    });
+    //创建school组件
+    const school = Vue.extend({
+        template: `
+        <div>
+        <h3>学校名称:{{schoolName}}</h3>
+        <h3>学校地址:{{schoolAddress}}</h3>
+        <button @click="show">点我弹出学校名称</button>
+        <student></student>
+        </div>    
+        `,
+        data() {
+            return {
+                schoolName: '名称',
+                schoolAddress: '地址'
+            }
+        },
+        methods: {
+            show() {
+                alert(this.schoolName)
+            }
+        },
+        components: {
+            student
+        }
+    });
+
+    new Vue({
+        el: '#app',
+        //注册组件(局部注册)
+        components: {
+            school
+        }
+    })
+</script>
+
+</html>
