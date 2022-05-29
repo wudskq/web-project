@@ -11,9 +11,6 @@
 
 <body>
     <div id="app">
-        <school>
-        </school>
-        <hr>
     </div>
 </body>
 <script>
@@ -57,13 +54,43 @@
             student
         }
     });
-
+    //同级hello组件
+    const hello = Vue.extend({
+        template: `
+        <div>
+            <h1>{{message}}</h1>
+        </div>    
+        `,
+        data() {
+            return {
+                message: 'hello'
+            }
+        }
+    });
+    //统一管理app
+    const app = Vue.extend({
+        template: `
+        <div>
+        <school></school>
+        <hello></hello>
+        </div>
+        `,
+        components: {
+            school,
+            hello
+        }
+    });
     new Vue({
         el: '#app',
         //注册组件(局部注册)
         components: {
-            school
-        }
+            app
+        },
+        template: `
+        <div>
+            <app></app>    
+        </div>
+        `
     })
 </script>
 
