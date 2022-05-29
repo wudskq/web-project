@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue生命周期</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 :style="{opacity}">欢迎学习Vue</h2>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data() {
+            return {
+                opacity: 1
+            }
+        },
+        methods: {
+
+        },
+        //钩子函数
+        mounted() {
+            console.log('定时器');
+            setInterval(() => {
+                vm.opacity -= 0.01;
+                if (vm.opacity <= 0) {
+                    vm.opacity = 1
+                }
+            }, 16)
+        },
+    });
+    //通过外部定时器实现不推荐
+    // setInterval(() => {
+    //     vm.opacity -= 0.01;
+    //     if (vm.opacity <= 0) {
+    //         vm.opacity = 1
+    //     }
+    // }, 16)
+</script>
+
+</html>
