@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue自定义指令-函数式</title>
+    <script src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>当前数值是:{{n}}</span> 放大10倍后的数值是: <span v-big="n"></span>
+        <br>
+        <button @click="n++">点击我加一</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                n: 1
+            }
+        },
+        //指令
+        directives: {
+            big(element, binding) {
+                // console.log(element, binding);
+                element.innerText = binding.value * 10;
+            }
+        }
+    });
+</script>
+
+</html>
