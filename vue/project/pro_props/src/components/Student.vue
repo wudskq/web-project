@@ -3,7 +3,8 @@
             <h1>标题:{{msg}}</h1>
             <h2>学生姓名:{{name}}</h2>
             <h2>学生性别:{{sex}}</h2>
-            <h2>学生年龄{{age+1}}</h2>
+            <h2>学生年龄{{MyAge}}</h2>
+            <button @click="updateAge">修改李四的年龄</button>
         </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
     name:'Student',
     data(){
         return{
-            msg:'我正在学习Vue'
+            msg:'我正在学习Vue',
+            MyAge:this.age
         }
     },
     //接收参数(简单接收)
@@ -36,7 +38,12 @@ export default {
             type:Number,
             required: false //代表该参数为必要的
         }
-    }
+    },
+    methods: {
+        updateAge(){
+            this.MyAge++
+        }
+    },
 }
 </script>
 
