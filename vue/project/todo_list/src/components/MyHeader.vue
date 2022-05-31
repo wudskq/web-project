@@ -1,6 +1,6 @@
 <template>
 	<div class="todo-header">
-		<input type="text" placeholder="请输入你的任务名称，按回车键确认" @keyup.enter="addData"/>
+		<input type="text" placeholder="请输入你的任务名称，按回车键确认" v-model="title" @keyup.enter="addData"/>
 	</div>
 </template>
 
@@ -8,17 +8,24 @@
 import {nanoid} from 'nanoid'
 	export default {
 		name:'MyHeader',
+		data(){
+			return{
+			 title:'' 
+			}
+		},
 		props:['receive'],
 		methods: {		
-		addData(e){
+		addData(){
+			if(!this.title) return alert('当前数据为空!请输入')
 			//输入数据包装为对象
 			const todoObj ={
 				id: nanoid(),
-				title: e.target.value,
+				title: this.title,
 				done: false
 			}
 			console.log(todoObj);
 			this.receive(todoObj);
+			this.title = '';
 		}},
 		
 	}

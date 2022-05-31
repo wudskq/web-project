@@ -4,7 +4,7 @@
 			<div class="todo-wrap">
 				<!-- 父组件传输函数到子组件 -->
 				<MyHeader :receive="receive"/>
-				<MyList :todoData="todos"/>
+				<MyList :todoData="todos" :reviceData="reviceData"/>
 				<MyFooter/>
 			</div>
 		</div>
@@ -26,10 +26,22 @@
 				]
 			}
 		},
+		//组件通信(数据在哪,函数体在哪)
 		methods: {
+			//接收list的数据
 			receive(result){
 				console.log('我是app组件收到了数据',result);
 				this.todos.unshift(result);
+			},
+			//接收item的ID
+			reviceData(id){
+				console.log('l我是app组件收到点击的itemid等于'+id)
+				this.todos.forEach((todo)=>{
+					//勾选状态取反
+					if(todo.id===id){
+						todo.done = !todo.done
+					}
+				});
 			}
 		},
 	}

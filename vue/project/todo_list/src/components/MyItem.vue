@@ -1,7 +1,7 @@
 <template>
 	<li>
 		<label>
-			<input type="checkbox" :checked="todo.done"/>
+			<input type="checkbox" :checked="todo.done" @change="handleClick(todo.id)"/>
 			<!-- 如下代码也能实现功能，但是不太推荐，因为有点违反原则，因为修改了props -->
 			<!-- <input type="checkbox" v-model="todo.done"/> -->
 			<span>{{todo.title}}</span>
@@ -13,7 +13,13 @@
 <script>
 	export default {
 		name:'MyItem',
-		props:['todo'],
+		props:['todo','reviceData'],
+		methods: {
+			//通知id给app
+			handleClick(id){
+				this.reviceData(id);
+			}
+		},
 		mounted() {
 			// console.log(this)
 		},
