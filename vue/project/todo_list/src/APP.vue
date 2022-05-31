@@ -24,10 +24,19 @@
 		components:{MyHeader,MyList,MyFooter},
 		data(){
 			return{
-				todos:[
-					{id:1,title:'吃饭',done:true},
-					{id:2,title:'下班',done:false}
-				]
+				//使用空数组 解决第一次进来空数据null异常问题
+				todos:JSON.parse(localStorage.getItem('todos')) ||[]
+			}
+		},
+		//监视属性(todos数据变化就更新localStorge数据)
+		watch:{
+			todos:{
+				//开启深度监视
+				deep:true,
+				handler(value){
+				// console.log(value);
+				localStorage.setItem('todos',JSON.stringify(value));
+				}
 			}
 		},
 		//组件通信(数据在哪,函数体在哪)
