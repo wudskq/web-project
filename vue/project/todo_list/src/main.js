@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './APP'
+import App from './App'
 //引入插件
 import Plugins from './plugins.js'
 

@@ -1,26 +1,62 @@
 <template>
-     <li>
-        <label>
-        <input type="checkbox" name="" id="">
-        <span>嘻嘻嘻嘻算是山山水水嘻</span>
-        </label>
-        <button>删除</button>
-     </li>
+	<li>
+		<label>
+			<input type="checkbox" />
+			<!-- 如下代码也能实现功能，但是不太推荐，因为有点违反原则，因为修改了props -->
+			<!-- <input type="checkbox" v-model="todo.done"/> -->
+			<span>xxx</span>
+		</label>
+		<button class="btn btn-danger">删除</button>
+	</li>
 </template>
 
 <script>
-export default {
-    name:'MyItem'
-}
+	export default {
+		name:'MyItem',
+	}
 </script>
 
-<style>
+<style scoped>
+	/*item*/
+	li {
+		list-style: none;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 5px;
+		border-bottom: 1px solid #ddd;
+	}
 
-input{
-    margin-top: 10px;
-    margin-left: 20px;
-}
-li{
- list-style: none;
-}
+	li label {
+		float: left;
+		cursor: pointer;
+	}
+
+	li label li input {
+		vertical-align: middle;
+		margin-right: 6px;
+		position: relative;
+		top: -1px;
+	}
+
+	li button {
+		float: right;
+		display: none;
+		margin-top: 3px;
+	}
+
+	li:before {
+		content: initial;
+	}
+
+	li:last-child {
+		border-bottom: none;
+	}
+
+	li:hover{
+		background-color: #ddd;
+	}
+	
+	li:hover button{
+		display: block;
+	}
 </style>
