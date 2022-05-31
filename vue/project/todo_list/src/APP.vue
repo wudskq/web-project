@@ -2,8 +2,9 @@
 	<div id="root">
 		<div class="todo-container">
 			<div class="todo-wrap">
-				<MyHeader/>
-				<MyList/>
+				<!-- 父组件传输函数到子组件 -->
+				<MyHeader :receive="receive"/>
+				<MyList :todoData="todos"/>
 				<MyFooter/>
 			</div>
 		</div>
@@ -17,6 +18,20 @@
 	export default {
 		name:'App',
 		components:{MyHeader,MyList,MyFooter},
+		data(){
+			return{
+				todos:[
+					{id:1,title:'吃饭',done:true},
+					{id:2,title:'下班',done:false}
+				]
+			}
+		},
+		methods: {
+			receive(result){
+				console.log('我是app组件收到了数据',result);
+				this.todos.unshift(result);
+			}
+		},
 	}
 </script>
 

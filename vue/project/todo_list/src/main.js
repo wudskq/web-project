@@ -5,8 +5,9 @@ import Plugins from './plugins.js'
 
 //加载插件
 Vue.use(Plugins)
+Vue.config.productionTip = false
 
-new Vue({
+var vm = new Vue({
     el: '#root',
     render: h => h(App)
 });

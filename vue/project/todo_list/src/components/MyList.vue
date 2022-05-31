@@ -1,17 +1,15 @@
 <template>
 	<ul class="todo-main">
-		<MyItem/>
-		<MyItem/>
-		<MyItem/>		
+		<MyItem v-for="todoObj in todoData" :key="todoObj.id" :todo="todoObj"/>	
 	</ul>
 </template>
 
 <script>
 	import MyItem from './MyItem'
-
 	export default {
 		name:'MyList',
 		components:{MyItem},
+		props:['todoData']
 	}
 </script>
 
