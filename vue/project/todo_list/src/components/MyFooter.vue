@@ -2,33 +2,53 @@
 	<div class="todo-footer">
 		<label>
 			<!-- <input type="checkbox" :checked="isAll" @change="checkAll"/> -->
-			<input type="checkbox"/>
+			<input type="checkbox" 
+			@change="choice" 
+			:checked="doneTotal === todos.length"
+			v-show="todos.length!=0"
+			/>
 		</label>
 		<span>
-			<span>已完成{{doneTotal}}</span> / 全部{{total}}
+			<span v-show="todos.length!=0">已完成{{doneTotal}}</span>
+			<span v-show="todos.length!=0">/全部{{todos.length}}</span>
 		</span>
-		<button class="btn btn-danger" @click="clearAll">清除已完成任务</button>
+		<button class="btn btn-danger" v-show="todos.length!=0" @click="clear">清除已完成任务</button>
 	</div>
 </template>
 
 <script>
+    var num = 0;
 	export default {
 		name:'MyFooter',
-		data(){
-			return{
-				doneTotal: 0,
-				total: 2,
+		props:['todos','clearData','choiceAll','noChoice'],
+		computed:{
+			doneTotal(){
+				let count = 0;
+				this.todos.forEach(element => {
+					if(element.done === true){
+						count++;
+					}
+				});
+				return count;
 			}
 		},
 		methods: {
-			/* checkAll(e){
-				this.checkAllTodo(e.target.checked)
-			} */
-			//清空所有已完成
-			clearAll(){
-				this.clearAllTodo()
+			//清除已完成的数据
+			clear(){
+				this.clearData();
+			},
+			//全选与取消全选
+			choice(){
+				if(num === 0){
+					this.choiceAll();
+					num+=1;
+				}else if (num === 1){
+					this.noChoice();
+					num-=1;
+				}
 			}
-		},
+			
+		}
 	}
 </script>
 

@@ -4,7 +4,9 @@
 		 v-for="todoObj in todoData" 
 		 :key="todoObj.id" 
 		 :todo="todoObj" 
-		 :reviceData="reviceData"/>	
+		 :reviceData="reviceData"
+		 :deleteData="deleteData"
+		 />	
 	</ul>
 </template>
 
@@ -13,7 +15,7 @@
 	export default {
 		name:'MyList',
 		components:{MyItem},
-		props:['todoData','reviceData'],
+		props:['todoData','reviceData','deleteData'],
 	}
 </script>
 

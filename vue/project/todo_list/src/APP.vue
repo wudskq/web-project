@@ -4,8 +4,12 @@
 			<div class="todo-wrap">
 				<!-- 父组件传输函数到子组件 -->
 				<MyHeader :receive="receive"/>
-				<MyList :todoData="todos" :reviceData="reviceData"/>
-				<MyFooter/>
+				<MyList :todoData="todos" :reviceData="reviceData" :deleteData="deleteData"/>
+				<MyFooter :todos="todos" 
+				:clearData="clearData" 
+				:choiceAll="choiceAll"
+				:noChoice="noChoice"
+				/>
 			</div>
 		</div>
 	</div>
@@ -42,6 +46,29 @@
 						todo.done = !todo.done
 					}
 				});
+			},
+			//接收item的ID
+			deleteData(id){
+				// console.log(id);
+				this.todos = this.todos.filter((todo)=>{
+					return todo.id !== id;
+				})
+			},
+			//清除已完成的数据
+			clearData(){
+				this.todos = this.todos.filter((todo)=>{
+					return todo.done !== true;
+				})
+			},
+			//全选
+			choiceAll(){
+				this.todos.forEach(element => {
+				element.done = true});
+			},
+			//不选择
+			noChoice(){
+				this.todos.forEach(element => {
+				element.done = false});
 			}
 		},
 	}

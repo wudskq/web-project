@@ -6,18 +6,24 @@
 			<!-- <input type="checkbox" v-model="todo.done"/> -->
 			<span>{{todo.title}}</span>
 		</label>
-		<button class="btn btn-danger">删除</button>
+		<button class="btn btn-danger" @click="remove(todo.id)">删除</button>
 	</li>
 </template>
 
 <script>
 	export default {
 		name:'MyItem',
-		props:['todo','reviceData'],
+		props:['todo','reviceData','deleteData'],
 		methods: {
 			//通知id给app
 			handleClick(id){
 				this.reviceData(id);
+			},
+			//删除功能通知给app
+			remove(id){
+				if(confirm('确定删除吗?')){
+					this.deleteData(id);
+				}
 			}
 		},
 		mounted() {
