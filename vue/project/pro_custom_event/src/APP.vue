@@ -3,8 +3,10 @@
     <h1>我是APP组件</h1>
     <School :reviceSchoolName="reviceSchoolName"/>
     <hr> 
+    <!-- 自定义绑定事件 -->
     <!-- <Student v-on:wudskq="reviceStudentName"/>  -->
-    <Student ref="id_1"/> 
+    <!-- <Student @:wudskq="reviceStudentName"/>  -->
+    <Student ref="id_1" @event1="demo"/> 
 </div>
 </template>
 
@@ -24,7 +26,11 @@ export default {
         },
         reviceStudentName(StudentName){
             // console.log('demo被调用了!',name);
-            console.log("App收到了学生姓名:",StudentName);
+            console.log("App-reviceStudentName收到了学生姓名:",StudentName);
+        },
+        demo(StudentName){
+            // console.log('demo被调用了!',name);
+            console.log("App-demo收到了学生姓名:",StudentName);
         }
     },
     mounted() {
