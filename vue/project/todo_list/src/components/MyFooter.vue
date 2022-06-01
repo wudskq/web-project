@@ -35,15 +35,16 @@
 		methods: {
 			//清除已完成的数据
 			clear(){
-				this.clearData();
+				this.$emit('clearTodoList');
 			},
 			//全选与取消全选
 			choice(){
 				if(num === 0){
-					this.choiceAll();
+					this.$emit('choiceAll');
 					num+=1;
 				}else if (num === 1){
-					this.noChoice();
+					// this.noChoice();
+					this.$emit('noChoice');
 					num-=1;
 				}
 			}

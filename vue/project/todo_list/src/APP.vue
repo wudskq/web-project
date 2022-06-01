@@ -6,9 +6,9 @@
 				<MyHeader :receive="receive"/>
 				<MyList :todoData="todos" :reviceData="reviceData" :deleteData="deleteData"/>
 				<MyFooter :todos="todos" 
-				:clearData="clearData" 
-				:choiceAll="choiceAll"
-				:noChoice="noChoice"
+				@clearTodoList="clearData"
+				@choiceAll="choiceAll"
+				@noChoice="noChoice"
 				/>
 			</div>
 		</div>
