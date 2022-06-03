@@ -19,7 +19,16 @@ export default {
     methods: {
     },
     mounted() {
-        console.log(this.x);
+        // console.log(this.x);
+        //定义全局事件总线接收
+        this.$bus.$on('hello',(data)=>{
+            console.log('我是student组件',data);
+        })
+        
+    },
+    beforeDestroy() {
+        //组件销毁前解绑事件
+        this.$bus.$off('hello')
     },
 
 }

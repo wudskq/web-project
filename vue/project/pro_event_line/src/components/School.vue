@@ -3,6 +3,7 @@
             <h1>标题:{{msg}}</h1>
             <h2 >学校名称:{{name}}</h2>
             <h2>学校地址:{{address}}</h2>
+            <button @click="sendSchoolName">把学校名给student组件</button>
         </div>
 </template>
 
@@ -16,9 +17,15 @@ export default {
             address:'中国'
         }
     },
-    mounted() {
-        console.log(this.x);
+    methods: {
+        sendSchoolName(){
+            //定义全局事件总线触发
+            this.$bus.$emit('hello',this.name);
+        }
     },
+    // mounted() {
+    //     console.log(this.x);
+    // },
 }
 </script>
 
