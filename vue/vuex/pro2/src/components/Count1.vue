@@ -6,7 +6,7 @@
              <option value="2">2</option>
              <option value="3">3</option>
          </select>
-         当前值为: {{$store.state.data}}
+         当前值为:{{data}}
          <button @click="Incremental">点击加一</button>
          <button @click="Decrement">点击减一</button>
          <button @click="Oddnumber">点击当前数为奇数时加</button>
@@ -19,24 +19,25 @@ export default {
     name:'Count',
     data(){
         return{
+            data: 0,
             value:1
         }
     },
     methods: {
         Incremental(){
-            this.$store.dispatch('incre',this.value);
+            this.data = this.data + this.value
         },
         Decrement(){
-             this.$store.dispatch('decr',this.value);
+            this.data = this.data - this.value
         },
         Oddnumber(){
-            if(this.$store.state.data %2 !== 0){
-              this.$store.dispatch('odd',this.value);  
+            if(this.data %2 !== 0){
+                this.data = this.data + this.value
             }
         },
         Waitadd(){
             setInterval(()=>{
-                 this.$store.dispatch('wait',this.value);
+                this.data = this.data + this.value
             },2000);
         }
     },
