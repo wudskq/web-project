@@ -1,5 +1,5 @@
 <template>
-<div class="row">
+	<div class="row">
 		<!-- 展示用户列表 -->
 		<div v-show="info.users.length" class="card" v-for="user in info.users" :key="user.login">
 			<a :href="user.html_url" target="_blank">
@@ -17,9 +17,9 @@
 </template>
 
 <script>
-export default {
-    name:'Data',
-    data() {
+	export default {
+		name:'List',
+		data() {
 			return {
 				info:{
 					isFirst:true,
@@ -29,26 +29,12 @@ export default {
 				}
 			}
 		},
-    methods: {
-        serach(data){
-           //发送请求获取数据
-          this.$axios.get('/api'+'?q='+data).then(
-                response => {
-                    const result = response.data;
-                    // console.log(result)
-                    this.info ={isLoading:false,errMsg:'',users:response.data.items}
-                },
-                response => {
-                    alert('请求失败');
-                },
-            );
-        }
-    },
-    mounted() {
-        //绑定事件
-        this.$bus.$on('reviceData',this.serach);
-    },
-}
+		mounted() {
+			this.$bus.$on('updateListData',(dataObj)=>{
+				this.info = {...this.info,...dataObj}
+			})
+		},
+	}
 </script>
 
 <style scoped>
