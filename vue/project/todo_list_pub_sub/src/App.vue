@@ -40,7 +40,7 @@
 		methods: {
 		},
 		mounted() {
-			pubsub.subscribe('receive',(topic,result)=>{
+			this.pub_id = pubsub.subscribe('receive',(topic,result)=>{
 				this.todos.unshift(result);
 			});	
 			pubsub.subscribe('reviceData',(topic,id)=>{
@@ -69,6 +69,10 @@
 				this.todos.forEach(element => {
 				element.done = false});
 			});	
+		},
+		//销毁前取消订阅
+		beforeDestroy() {
+			pubsub.unsubscribe(pub_id);
 		},
 	}
 </script>
