@@ -1,0 +1,79 @@
+<template>
+	<li>
+		<label>
+			<input type="checkbox" :checked="todo.done" @change="handleClick(todo.id)"/>
+			<!-- 如下代码也能实现功能，但是不太推荐，因为有点违反原则，因为修改了props -->
+			<!-- <input type="checkbox" v-model="todo.done"/> -->
+			<span>{{todo.title}}</span>
+		</label>
+		<button class="btn btn-danger" @click="remove(todo.id)">删除</button>
+	</li>
+</template>
+
+<script>
+import pubsub from 'pubsub-js'
+	export default {
+		name:'MyItem',
+		props:['todo'],
+		methods: {
+			//通知id给app
+			handleClick(id){
+				pubsub.publish('reviceData',id);
+			},
+			//删除功能通知给app
+			remove(id){
+				if(confirm('确定删除吗?')){
+					pubsub.publish('deleteData',id);
+				}
+			}
+		},
+		mounted() {
+			// console.log(this)
+		},
+	}
+</script>
+
+<style scoped>
+	/*item*/
+	li {
+		list-style: none;
+		height: 36px;
+		line-height: 36px;
+		padding: 0 5px;
+		border-bottom: 1px solid #ddd;
+	}
+
+	li label {
+		float: left;
+		cursor: pointer;
+	}
+
+	li label li input {
+		vertical-align: middle;
+		margin-right: 6px;
+		position: relative;
+		top: -1px;
+	}
+
+	li button {
+		float: right;
+		display: none;
+		margin-top: 3px;
+	}
+
+	li:before {
+		content: initial;
+	}
+
+	li:last-child {
+		border-bottom: none;
+	}
+
+	li:hover{
+		background-color: #ddd;
+	}
+	
+	li:hover button{
+		display: block;
+	}
+</style>
