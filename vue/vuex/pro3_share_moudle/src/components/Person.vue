@@ -39,6 +39,7 @@ export default {
             name: this.name}
         // console.log(personObj);
         this.$store.commit('personOptions/ADD_PERSON',personObj)
+        this.name = '';
         }
     },
     mounted() {
