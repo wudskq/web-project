@@ -24,6 +24,15 @@ const router = new VueRouter({
                     path: 'message',
                     component: Message,
                     meta: { isAuth: false, title: '消息' },
+                    beforeEnter(to, from, next) {
+                        if (to.meta.isAuth) { //判断是否需要鉴权
+                            if (localStorage.getItem('school') === 'atguigu') {
+                                next()
+                            } else {
+                                alert('学校名不对，无权限查看！')
+                            }
+                        }
+                    },
                     children: [{
                         name: 'MessageDetails',
                         //params
@@ -43,40 +52,48 @@ const router = new VueRouter({
                     path: 'news',
                     component: News,
                     meta: { isAuth: true, title: '新闻' },
+                    beforeEnter(to, from, next) {
+                        if (to.meta.isAuth) { //判断是否需要鉴权
+                            if (localStorage.getItem('school') === 'atguigu') {
+                                next()
+                            } else {
+                                alert('学校名不对，无权限查看！')
+                            }
+                        }
+                    }
                 }
             ]
         }
     ],
 })
 
+// //配置全局前置路由守卫
+// //初始化之前以及切换路由之前调用
+// router.beforeEach((to, from, next) => {
+//     console.log('@全局前置路由守卫');
+//     console.log(to);
+//     console.log(from);
+// if (to.meta.isAuth) { //判断是否需要鉴权
+//     if (localStorage.getItem('school') === 'atguigu') {
+//         next()
+//     } else {
+//         alert('学校名不对，无权限查看！')
+//     }
+//     } else {
+//         //放行
+//         next()
+//     }
+//     // next();
+// });
 
-//配置全局前置路由守卫
-//初始化之前以及切换路由之前调用
-router.beforeEach((to, from, next) => {
-    console.log('@全局前置路由守卫');
-    console.log(to);
-    console.log(from);
-    if (to.meta.isAuth) { //判断是否需要鉴权
-        if (localStorage.getItem('school') === 'atguigu') {
-            next()
-        } else {
-            alert('学校名不对，无权限查看！')
-        }
-    } else {
-        //放行
-        next()
-    }
-    // next();
-});
-
-//配置后置路由守卫
-router.afterEach((to, from) => {
-    console.log('@全局后置路由守卫');
-    console.log(to);
-    console.log(from);
-    console.log(to.meta.title);
-    document.title = to.meta.title || '路由守卫'
-});
+// //配置后置路由守卫
+// router.afterEach((to, from) => {
+//     console.log('@全局后置路由守卫');
+//     console.log(to);
+//     console.log(from);
+//     console.log(to.meta.title);
+//     document.title = to.meta.title || '路由守卫'
+// });
 
 
 export default router;
