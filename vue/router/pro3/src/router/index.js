@@ -25,7 +25,18 @@ export default new VueRouter({
                         name: 'MessageDetails',
                         //params
                         path: 'details/:id/:title',
-                        component: Details
+                        component: Details,
+                        //第一种写法 props 该对象中的所有属性都会以props形式传递给该组件
+                        // props: { a: 1, b: 'hello' }
+                        // //第二种写法 若为真就会把路由params参数以props形式传递给该组件
+                        // props: true
+                        //第三种写法 值为函数路由query参数以props形式传递给该组件
+                        props($route) {
+                            return {
+                                id: $route.query.id,
+                                title: $route.query.title,
+                            }
+                        }
                     }]
                 },
                 {

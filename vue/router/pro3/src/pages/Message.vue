@@ -7,7 +7,7 @@
 				    {{m.title}}
 				</router-link>&nbsp;&nbsp; -->
 				<!-- query传参数 第二种写法 -->
-				<!-- <router-link :to="{
+				<router-link :to="{
 					name:'MessageDetails',
 					query:{
 						id:m.id,
@@ -15,8 +15,8 @@
 					}
 				}">
 				    {{m.title}}
-				</router-link>&nbsp;&nbsp; -->
-				<router-link :to="{
+				</router-link>&nbsp;&nbsp;
+				<!-- <router-link :to="{
 					name:'MessageDetails',
 					params:{
 						id:m.id,
@@ -24,7 +24,7 @@
 					}
 				}">
 				    {{m.title}}
-				</router-link>&nbsp;&nbsp;
+				</router-link>&nbsp;&nbsp; -->
 			</li>
 			<router-view></router-view>
 		</ul>
