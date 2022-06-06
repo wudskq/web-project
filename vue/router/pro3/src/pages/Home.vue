@@ -3,7 +3,8 @@
 	<h2>我是Home的内容</h2>
 	<router-link  :to="{name:'aboutPage'}" active-class="active">news</router-link>
 	&nbsp;
-	<router-link  to="/home/message" active-class="active">message</router-link>
+	<!-- 开启历史记录replace模式 -->
+	<router-link replace to="/home/message" active-class="active">message</router-link>
 	<router-view></router-view>
 	</div> 
 </template>
