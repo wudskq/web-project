@@ -8,35 +8,28 @@ import News from '../pages/News'
 import Details from '../components/Details'
 
 //创建并暴露一个路由器
-export default new VueRouter({
+const router = new VueRouter({
     routes: [{
             //命名路由
             name: 'aboutPage',
             path: '/about',
-            component: About
+            component: About,
+            meta: { isAuth: true, title: '关于' },
         },
         {
             path: '/home',
             component: Home,
+            meta: { isAuth: true, title: '主页' },
             children: [{
                     path: 'message',
                     component: Message,
+                    meta: { isAuth: true, title: '消息' },
                     children: [{
                         name: 'MessageDetails',
                         //params
                         path: 'details/:id/:title',
                         component: Details,
-                        //第一种写法 props 该对象中的所有属性都会以props形式传递给该组件
-                        // props: { a: 1, b: 'hello' }
-                        // //第二种写法 若为真就会把路由params参数以props形式传递给该组件
-                        // props: true
-                        //第三种写法 值为函数路由query参数以props形式传递给该组件
-                        // props($route) {
-                        //     return {
-                        //         id: $route.query.id,
-                        //         title: $route.query.title,
-                        //     }
-                        // }
+                        meta: { isAuth: true, title: '详情' },
                         props({ query: { id, title } }) {
                             return {
                                 id: id,
@@ -48,9 +41,42 @@ export default new VueRouter({
                 {
                     name: 'News',
                     path: 'news',
-                    component: News
+                    component: News,
+                    meta: { isAuth: true, title: '新闻' },
                 }
             ]
         }
     ],
 })
+
+
+//配置全局前置路由守卫
+//初始化之前以及切换路由之前调用
+router.beforeEach((to, from, next) => {
+    console.log('@全局前置路由守卫');
+    console.log(to);
+    console.log(from);
+    // if (to.meta.isAuth) { //判断是否需要鉴权
+    //     if (localStorage.getItem('school') === 'atguigu') {
+    //         next()
+    //     } else {
+    //         alert('学校名不对，无权限查看！')
+    //     }
+    // } else {
+    //     //放行
+    //     next()
+    // }
+    next();
+});
+
+//配置后置路由守卫
+router.afterEach((to, from) => {
+    console.log('@全局后置路由守卫');
+    console.log(to);
+    console.log(from);
+    console.log(to.meta.title);
+    document.title = to.meta.title;
+});
+
+
+export default router;
