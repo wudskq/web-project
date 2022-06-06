@@ -14,7 +14,7 @@ const router = new VueRouter({
             name: 'aboutPage',
             path: '/about',
             component: About,
-            meta: { isAuth: false, title: '关于' },
+            meta: { isAuth: true, title: '关于' },
         },
         {
             path: '/home',
@@ -24,15 +24,6 @@ const router = new VueRouter({
                     path: 'message',
                     component: Message,
                     meta: { isAuth: false, title: '消息' },
-                    beforeEnter(to, from, next) {
-                        if (to.meta.isAuth) { //判断是否需要鉴权
-                            if (localStorage.getItem('school') === 'atguigu') {
-                                next()
-                            } else {
-                                alert('学校名不对，无权限查看！')
-                            }
-                        }
-                    },
                     children: [{
                         name: 'MessageDetails',
                         //params
@@ -52,15 +43,16 @@ const router = new VueRouter({
                     path: 'news',
                     component: News,
                     meta: { isAuth: true, title: '新闻' },
-                    beforeEnter(to, from, next) {
-                        if (to.meta.isAuth) { //判断是否需要鉴权
-                            if (localStorage.getItem('school') === 'atguigu') {
-                                next()
-                            } else {
-                                alert('学校名不对，无权限查看！')
-                            }
-                        }
-                    }
+                    //独享守卫
+                    // beforeEnter(to, from, next) {
+                    //     if (to.meta.isAuth) { //判断是否需要鉴权
+                    //         if (localStorage.getItem('school') === 'atguigu') {
+                    //             next()
+                    //         } else {
+                    //             alert('学校名不对，无权限查看！')
+                    //         }
+                    //     }
+                    // }
                 }
             ]
         }
