@@ -31,10 +31,16 @@ export default new VueRouter({
                         // //第二种写法 若为真就会把路由params参数以props形式传递给该组件
                         // props: true
                         //第三种写法 值为函数路由query参数以props形式传递给该组件
-                        props($route) {
+                        // props($route) {
+                        //     return {
+                        //         id: $route.query.id,
+                        //         title: $route.query.title,
+                        //     }
+                        // }
+                        props({ query: { id, title } }) {
                             return {
-                                id: $route.query.id,
-                                title: $route.query.title,
+                                id: id,
+                                title: title,
                             }
                         }
                     }]
