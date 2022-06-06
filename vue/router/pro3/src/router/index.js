@@ -23,7 +23,8 @@ export default new VueRouter({
                     component: Message,
                     children: [{
                         name: 'MessageDetails',
-                        path: 'details',
+                        //params
+                        path: 'details/:id/:title',
                         component: Details
                     }]
                 },
