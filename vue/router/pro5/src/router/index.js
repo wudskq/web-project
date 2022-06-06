@@ -75,7 +75,7 @@ router.afterEach((to, from) => {
     console.log(to);
     console.log(from);
     console.log(to.meta.title);
-    document.title = to.meta.title;
+    document.title = to.meta.title || '路由守卫'
 });
 
 
