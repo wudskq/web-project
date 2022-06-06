@@ -8,7 +8,7 @@
 				</router-link>&nbsp;&nbsp; -->
 				<!-- query传参数 第二种写法 -->
 				<router-link :to="{
-					path:'/home/message/details',
+					name:'MessageDetails',
 					query:{
 						id:m.id,
 						title:m.title

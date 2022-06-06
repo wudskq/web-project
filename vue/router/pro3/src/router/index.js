@@ -10,6 +10,8 @@ import Details from '../components/Details'
 //创建并暴露一个路由器
 export default new VueRouter({
     routes: [{
+            //命名路由
+            name: 'aboutPage',
             path: '/about',
             component: About
         },
@@ -20,6 +22,7 @@ export default new VueRouter({
                     path: 'message',
                     component: Message,
                     children: [{
+                        name: 'MessageDetails',
                         path: 'details',
                         component: Details
                     }]
