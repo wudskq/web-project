@@ -2,8 +2,18 @@
 	<div>
 		<ul>
 			<li v-for="m in messageList" :key="m.id" >
-				<!-- query传参数 -->
+				<!-- query传参数 第一种写法
 				<router-link :to="`/home/message/details?id=${m.id}&title=${m.title}`">
+				    {{m.title}}
+				</router-link>&nbsp;&nbsp; -->
+				<!-- query传参数 第二种写法 -->
+				<router-link :to="{
+					path:'/home/message/details',
+					query:{
+						id:m.id,
+						title:m.title
+					}
+				}">
 				    {{m.title}}
 				</router-link>&nbsp;&nbsp;
 			</li>
