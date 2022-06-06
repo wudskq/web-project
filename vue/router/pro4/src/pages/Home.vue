@@ -5,7 +5,10 @@
 	&nbsp;
 	<!-- 开启历史记录replace模式 -->
 	<router-link to="/home/message" active-class="active">message</router-link>
-	<router-view></router-view>
+	<!-- 开启路由缓存 -->
+	<keep-alive include="News">
+		<router-view></router-view>
+	</keep-alive>
 	</div> 
 </template>
 

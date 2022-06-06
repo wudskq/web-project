@@ -54,8 +54,8 @@
 				// console.log('查看时只记录一条历史记录');
 			}
 		},
-		mounted() {
-			console.log(this);
+		beforeDestroy() {
+			console.log('Message组件即将被销毁');
 		},
 	}
 </script>
