@@ -14,16 +14,16 @@ const router = new VueRouter({
             name: 'aboutPage',
             path: '/about',
             component: About,
-            meta: { isAuth: true, title: '关于' },
+            meta: { isAuth: false, title: '关于' },
         },
         {
             path: '/home',
             component: Home,
-            meta: { isAuth: true, title: '主页' },
+            meta: { isAuth: false, title: '主页' },
             children: [{
                     path: 'message',
                     component: Message,
-                    meta: { isAuth: true, title: '消息' },
+                    meta: { isAuth: false, title: '消息' },
                     children: [{
                         name: 'MessageDetails',
                         //params
@@ -56,17 +56,17 @@ router.beforeEach((to, from, next) => {
     console.log('@全局前置路由守卫');
     console.log(to);
     console.log(from);
-    // if (to.meta.isAuth) { //判断是否需要鉴权
-    //     if (localStorage.getItem('school') === 'atguigu') {
-    //         next()
-    //     } else {
-    //         alert('学校名不对，无权限查看！')
-    //     }
-    // } else {
-    //     //放行
-    //     next()
-    // }
-    next();
+    if (to.meta.isAuth) { //判断是否需要鉴权
+        if (localStorage.getItem('school') === 'atguigu') {
+            next()
+        } else {
+            alert('学校名不对，无权限查看！')
+        }
+    } else {
+        //放行
+        next()
+    }
+    // next();
 });
 
 //配置后置路由守卫
